@@ -29,6 +29,6 @@ int main(int argc, const char * argv[]) {
     Node haha;
     haha.someFunction(5);
     
-    cout << "Hello, World!\n";
+    cout << "Hell o, World!\n";
     return 0;
 }
