@@ -7,6 +7,9 @@
 //
 
 #include "bptree.h"
+#include <iostream>
+#include "Node.h"
+using namespace std;
 bptree::bptree()
 {
     //implementation here
@@ -17,5 +20,15 @@ int bptree::insert(int parameters)
     holder = parameters;
     printf("holder value is %d \n", holder);
     //implemenation here
+    return 0;
+}
+
+int main(int argc, const char * argv[]) {
+    // insert code here...
+    cout << "Hello, World!\n";
+    Node haha;
+    haha.someFunction(5);
+    
+    cout << "Hello, World!\n";
     return 0;
 }
