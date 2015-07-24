@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE1DC2651B62BF710014E974 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE1DC2631B62BF710014E974 /* Node.cpp */; };
 		EE1DC2681B62C5AF0014E974 /* bptree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE1DC2661B62C5AF0014E974 /* bptree.cpp */; };
 		EE8396DC1B62BAFA0063475C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE8396DB1B62BAFA0063475C /* main.cpp */; };
 /* End PBXBuildFile section */
@@ -130,7 +129,6 @@
 			files = (
 				EE8396DC1B62BAFA0063475C /* main.cpp in Sources */,
 				EE1DC2681B62C5AF0014E974 /* bptree.cpp in Sources */,
-				EE1DC2651B62BF710014E974 /* Node.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

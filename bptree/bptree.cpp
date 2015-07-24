@@ -8,8 +8,41 @@
 
 #include "bptree.h"
 #include <iostream>
-#include "Node.h"
+//#include "Node.h"
 using namespace std;
+
+
+class Node {
+    int keyvalue, holder;
+    Node* parent; // pointer to a parent node
+public:
+    Node ();
+    Node (int,int);
+    int someFunction(int);
+    };
+Node::Node()
+{
+    holder = 700;
+    //implementation here
+}
+
+Node::Node(int x, int y)
+{
+    holder = x;
+    
+    
+}
+
+int Node::someFunction(int parameters)
+{
+    //holder = parameters;
+    printf("holder value is %d \n", holder);
+    //implemenation here
+    return 0;
+}
+
+
+
 bptree::bptree()
 {
     //implementation here
@@ -17,7 +50,7 @@ bptree::bptree()
 
 int bptree::insert(int parameters)
 {
-    holder = parameters;
+   // holder = parameters;
     printf("holder value is %d \n", holder);
     //implemenation here
     return 0;
