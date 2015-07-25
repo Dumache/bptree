@@ -6,18 +6,11 @@
 //  Copyright (c) 2015 Tyler Wong. All rights reserved.
 //
 
-#include "bptree.h"
 #include <iostream>
 //#include "Node.h"
+#include "bptree.h"
 using namespace std;
-class record{
-    int key;
-    string stringvalue;
-    
-public:
-    record();
-    record(int, string);//initializing a record with a key and a string.
-};
+
 record::record(){
     //default
     key=0;
@@ -31,18 +24,16 @@ record::record(int key, string stringvalue){
 }
 
 
+string record::getstring(){
+    return stringvalue;
+}
+
+int record::getkey(){
+    
+    return key;
+}
 
 
-class Node {
-    int holder;
-    int* keyarray;
-    Node* parent; // pointer to a parent node
-    Node* next; //pointer to the next neighboring node (null if not a leaf node)
-public:
-    Node ();
-    Node (int,int);
-    int someFunction(int);
-    };
 Node::Node()//default node constructor
 {
     holder = 700;
@@ -70,10 +61,10 @@ int Node::someFunction(int parameters)
 
 
 
-int bptree::insert(int parameters)
+int bptree::insert(int inputkey, string inputstring, bptree *tree)
 {
-    holder = parameters;
-    printf("holder value is %d \n", holder);
+    //holder = parameters;
+    //printf("holder value is %d \n", holder);
     //implemenation here
     return 0;
 }
@@ -90,33 +81,61 @@ int bptree::remove(int parameters){
     
 }
 
-int bptree::find(int parameters){
+string bptree::find(int parameters){
     
     return 0;
 }
 
-int bptree::printkeys(int parameters){
+int bptree::printkeys(){
     
     return 0;
 }
 
-int bptree::printvalues(int parameters){
+int bptree::printvalues(){
     
     return 0;
 }
 
-int selection(int parameters){ // this function is going to direct us to the function that we need to use, depending on what the user inputs
+
+
+
+int selection(int parameters, bptree *tree){ // this function is going to direct us to the function that we need to use, depending on what the user inputs
+    int inputkey;
+    string inputstring;
+    //the string and inputkey are variables used to store user input
     switch (parameters){
-        case 1:
-            cout<<"hello";
+        
+        case 1:{//insert
+            cout<<"please enter the key value of your new node: ";
+            cin>>inputkey;
+            cout<<"please enter the string value associated with the key: ";
+            cin>>inputstring;
+            
+            //create a new record for that pair
+            record newrecord = record(inputkey, inputstring);
+            //cout<<newrecord.getstring() + "\n";
+            
+            //NOW WE NEED A METHOD THAT INSERTS IT INTO THE TREE
+            
+            tree->insert(inputkey, inputstring, tree);
+           
+            
             break;
-        case 2:
+        }
+        case 2://remove
+            cout<<"please enter the key value of the node: ";
+            cin>>inputkey;
+            tree->remove(inputkey);
             break;
-        case 3:
+        case 3://find
+            cout<<"please enter the key value of the node: ";
+            cin>>inputkey;
+            tree->find(inputkey);
             break;
-        case 4:
+        case 4://printkeys
+            tree->printkeys();
             break;
-        case 5:
+        case 5://printvalues
             break;
     }
     return 0;
@@ -134,10 +153,17 @@ int main(int argc, const char * argv[]) {
     int choice = 100;
     
     while (choice>0){
-        cout<<"What would you like to do? ";
+        cout<<"What would you like to do? \n";
+        cout<<"Enter 1 for insertion \n";
+        cout<<"Enter 2 for deletion \n";
+        cout<<"Enter 3 to find a key \n";
+        cout<<"Enter 4 to print all keys \n";
+        cout<<"Enter 5 to print all values \n";
+        cout<<"And Enter 0 to exit \n";
+        
         cin>>choice;
         printf("you chose %d \n", choice);
-        selection(choice);
+        selection(choice, &tree);
         
     }
     return 0;

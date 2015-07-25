@@ -10,18 +10,43 @@
 #define __bptree__bptree__
 
 #include <stdio.h>
+#include <iostream>
+//#include "bptree.cpp"
+using namespace std;
 
+class record{
+    int key;
+    string stringvalue;
+    
+public:
+    record();
+    record(int, string);//initializing a record with a key and a string.
+    string getstring();
+    int getkey();
+};
+
+class Node {
+    int holder;
+    int* keyarray;
+    Node* parent; // pointer to a parent node
+    Node* next; //pointer to the next neighboring node (null if not a leaf node)
+public:
+    Node ();
+    Node (int,int);
+    int someFunction(int);
+};
 class bptree
 {
 public:
     bptree();
     
     int holder;
-    int insert(int parameters);
+    Node x;
+    int insert(int inputkey, string inputstring, bptree * bptree);
     int remove(int parameters);
-    int find(int parameters);
-    int printkeys(int parameters);
-    int printvalues(int parameters);
+    string find(int parameters);
+    int printkeys();
+    int printvalues();
     
 };
 
