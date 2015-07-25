@@ -26,4 +26,11 @@ public:
 };
 
 
+bptree::bptree()
+{
+    //implementation here
+}
+
+
+
 #endif /* defined(__bptree__bptree__) */
