@@ -16,7 +16,7 @@ record::record(){
     key=0;
     stringvalue = "nothing";
 }
-
+//linux test comment
 record::record(int key, string stringvalue){
     //proper construct
     this->key = key;
